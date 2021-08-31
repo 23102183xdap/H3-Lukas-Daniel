@@ -1,1 +1,11 @@
-<p>book-list works!</p>
+<div class="row">
+    <div *ngFor="let b of books" class="shadow-lg col-sm-4 p-3">
+        <app-book-card 
+        book_id="{{ b.Id }}"
+        book_name="{{ b.Name }}"
+        book_type="{{ b.Type }}"
+        book_price="{{ b.Price }}" 
+        ></app-book-card>
+
+    </div>
+</div>
