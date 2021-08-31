@@ -1,10 +1,10 @@
 <div class="row">
-    <div *ngFor="let b of books" class="shadow-lg col-sm-4 p-3">
+    <div *ngFor="let b of authors" class="shadow-lg col-sm-4 p-3">
         <app-book-card 
-        book_id="{{ b.Id }}"
-        book_name="{{ b.Name }}"
-        book_type="{{ b.Type }}"
-        book_price="{{ b.Price }}" 
+        book_id="{{ b.id }}"
+        book_name="{{ b.firstName }}"
+        book_type="{{ b.lastName }}"
+
         ></app-book-card>
 
     </div>

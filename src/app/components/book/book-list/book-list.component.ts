@@ -1,5 +1,7 @@
+import { AuthorService } from './../../../shared/services/author.service';
 import { Component, OnInit } from '@angular/core';
 import { BookCardComponent } from '../book-card/book-card.component';
+import { Author } from 'src/app/shared/models/author/author.module';
 
 @Component({
   selector: 'app-book-list',
@@ -8,6 +10,8 @@ import { BookCardComponent } from '../book-card/book-card.component';
 })
 export class BookListComponent implements OnInit {
   
+  authors?: Author[];
+
   books: Array<any> = [
     {
       "Id": 1,
@@ -41,9 +45,15 @@ export class BookListComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(public api: AuthorService ) { }
 
   ngOnInit(): void {
+
+    this.api.GetAuthors().subscribe( data => {
+      console.log(data)
+      this.authors = data;
+    });
+
   }
 
 }
