@@ -24,6 +24,9 @@ export class AuthorService {
 
   public DeleteAuthor(authorId?: number): Observable<Author> {
     return this.http.delete<Author>(`${this.baseUrl}/authors/delete/${authorId}`)
+  }  
+  public CreateAuthor(data: any): Observable<Author> {
+    return this.http.post<Author>(`${this.baseUrl}/authors/create`, data)
   }
 
 }
