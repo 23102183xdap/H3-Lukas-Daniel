@@ -1,0 +1,11 @@
+<div class="row">
+    <div *ngFor="let a of authors" class="shadow-lg col-sm-4 p-3">
+        <app-author-card 
+
+        author_firstName="{{ a.firstname }}"
+        author_lastName="{{ a.lastname }}"
+
+        ></app-author-card>
+
+    </div>
+</div>
