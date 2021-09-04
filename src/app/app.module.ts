@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +12,14 @@ import { CreateAuthorTestComponent } from './create-author-test/create-author-te
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorCardComponent } from './components/author/author-card/author-card.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
+
+// firebase 
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { firebaseConfig } from 'src/environments/environment';
 
 
 
@@ -29,7 +38,9 @@ import { AuthorListComponent } from './components/author/author-list/author-list
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,  
   ],
   providers: [],
   bootstrap: [AppComponent]
