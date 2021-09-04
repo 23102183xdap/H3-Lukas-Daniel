@@ -1,4 +1,6 @@
-import { environment } from './../environments/environment.prod';
+import { environment } from 'src/environments/environment';
+import { initializeApp } from '@angular/fire/app';
+import { AuthModule } from '@angular/fire/auth';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,15 +15,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorCardComponent } from './components/author/author-card/author-card.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 
-// firebase 
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+// firebase
 import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { firebaseConfig } from 'src/environments/environment';
-
-
 
 @NgModule({
   declarations: [
@@ -39,8 +34,8 @@ import { firebaseConfig } from 'src/environments/environment';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,  
+    AuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
