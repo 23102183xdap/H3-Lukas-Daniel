@@ -1,5 +1,3 @@
-import { environment } from 'src/environments/environment';
-import { initializeApp } from '@angular/fire/app';
 import { AuthModule } from '@angular/fire/auth';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +14,7 @@ import { AuthorCardComponent } from './components/author/author-card/author-card
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 
 // firebase
-import { AngularFireModule } from '@angular/fire';
+// import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -34,8 +32,7 @@ import { AngularFireModule } from '@angular/fire';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
