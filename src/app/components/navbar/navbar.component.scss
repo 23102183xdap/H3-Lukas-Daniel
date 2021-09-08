@@ -1,0 +1,12 @@
+.nav-items {
+    display: flex;
+    justify-content: space-between;
+    .search-items {
+        display: flex;
+        justify-content: space-around;
+        input, button {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+    }
+}

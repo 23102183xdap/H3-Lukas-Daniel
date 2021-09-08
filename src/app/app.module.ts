@@ -12,6 +12,7 @@ import { CreateAuthorTestComponent } from './create-author-test/create-author-te
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorCardComponent } from './components/author/author-card/author-card.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 // firebase
 // import { AngularFireModule } from '@angular/fire';
@@ -24,7 +25,8 @@ import { AuthorListComponent } from './components/author/author-list/author-list
     // BookCardComponent,
     CreateAuthorTestComponent,
     AuthorCardComponent,
-    AuthorListComponent
+    AuthorListComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
