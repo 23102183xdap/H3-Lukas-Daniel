@@ -16,7 +16,7 @@ import { environment } from 'src/environments/environment';
 
 // firebase
 import { initializeApp } from '@firebase/app';
-import { AuthModule, getAuth, provideAuth } from '@angular/fire/auth';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
 
 @NgModule({
@@ -36,7 +36,6 @@ import { provideFirebaseApp } from '@angular/fire/app';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth())
   ],
