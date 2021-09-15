@@ -1,12 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
-
-@NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
-  ]
-})
-export class BookModule { }
+export interface Book {
+  id: number;
+  title: string;
+  pages: string;
+  coverLink: string;
+  series: number;
+  publishDate: Date;
+  author?: any;
+}

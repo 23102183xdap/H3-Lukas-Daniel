@@ -20,14 +20,15 @@ export class AuthorCardComponent implements OnInit {
   }
 
   constructor() { 
-    var height = Math.floor(Math.random() * 100) + 301;
-    this.authorImgUrl = `https://picsum.photos/400/${height}`; // this url is a test url
+
+
   }
 
   ngOnInit(): void {
     this.Author.firstName = this.author_firstName;
     this.Author.lastName = this.author_lastName;
     this.Author.id = this.author_id;
-
+    console.log("author firstname : " + this.author_firstName)
+    this.authorImgUrl = `https://loremflickr.com/400/300/${this.author_firstName}`; // this url is a test url
   }
 }
