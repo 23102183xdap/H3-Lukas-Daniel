@@ -1,4 +1,3 @@
-import { AuthModule } from '@angular/fire/auth';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,9 +14,12 @@ import { AuthorListComponent } from './components/author/author-list/author-list
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './views/login/login.component';
 import { BooktestComponent } from './booktest/booktest.component';
+import { environment } from 'src/environments/environment';
 
 // firebase
-// import { AngularFireModule } from '@angular/fire';
+import { initializeApp } from '@firebase/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { provideFirebaseApp } from '@angular/fire/app';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { BooktestComponent } from './booktest/booktest.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthModule
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideAuth(() => getAuth())
   ],
   providers: [],
   bootstrap: [AppComponent]

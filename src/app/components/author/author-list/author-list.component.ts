@@ -9,8 +9,8 @@ import { Author } from 'src/app/shared/models/author/author.module';
   styleUrls: ['./author-list.component.scss']
 })
 export class AuthorListComponent implements OnInit {
- 
-  
+
+
   authors?: Array<any>;
 
   constructor(public api: AuthorService ) { }

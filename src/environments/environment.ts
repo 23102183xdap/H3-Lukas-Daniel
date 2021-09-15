@@ -15,8 +15,6 @@ const environment = {
     appId: "1:385249714780:web:05425a1ba68a669cc4fc99"
   }
 }
-
-
 export { environment }
 
 /*
