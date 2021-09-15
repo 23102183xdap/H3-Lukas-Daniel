@@ -1,6 +1,6 @@
-import { BooktestComponent } from './booktest/booktest.component';
-import { LoginComponent } from './views/login/login.component';
-import { HomeComponent } from './views/home/home.component';
+import { BooktestComponent } from './test-components/booktest/booktest.component';
+import { LoginComponent } from './views/before-login/login/login.component';
+import { HomeComponent } from './views/before-login/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 

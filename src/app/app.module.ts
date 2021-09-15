@@ -4,16 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './views/home/home.component';
+import { HomeComponent } from './views/before-login/home/home.component';
 // import { BookListComponent } from './components/book/book-list/book-list.component';
 // import { BookCardComponent } from './components/book/book-card/book-card.component';
-import { CreateAuthorTestComponent } from './create-author-test/create-author-test.component';
+import { CreateAuthorTestComponent } from './test-components/create-author-test/create-author-test.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthorCardComponent } from './components/author/author-card/author-card.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LoginComponent } from './views/login/login.component';
-import { BooktestComponent } from './booktest/booktest.component';
+import { LoginComponent } from './views/before-login/login/login.component';
+import { BooktestComponent } from './test-components/booktest/booktest.component';
 import { environment } from 'src/environments/environment';
 
 // firebase

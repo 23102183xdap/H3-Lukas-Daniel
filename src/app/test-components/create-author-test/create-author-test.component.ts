@@ -1,4 +1,4 @@
-import { AuthorService } from './../shared/services/author.service';
+import { AuthorService } from '../../shared/services/author.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 
