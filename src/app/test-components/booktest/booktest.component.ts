@@ -53,10 +53,17 @@ export class BooktestComponent implements OnInit {
       this.books = data;
     });
 
+    this.bapi.update().subscribe(data => {
+      console.log(data)
+      this.books = data;
+    });
+
     this.aapi.GetAuthors().subscribe( data => {
       console.log(data)
       this.authors = data;
     });
+
+
 
   }
 }

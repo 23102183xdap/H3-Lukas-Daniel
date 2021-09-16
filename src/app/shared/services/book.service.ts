@@ -27,4 +27,8 @@ export class BookService {
     return this.http.post<Book>(`${this.baseUrl}/create`, data)
   }
 
+  public UpdateBook( data: any, bookId?: number): Observable<Book> {
+    return this.http.put<Book>(`${this.baseUrl}/update/${bookId}`, data)
+  }
+
 }
