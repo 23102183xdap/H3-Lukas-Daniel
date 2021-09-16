@@ -1,3 +1,5 @@
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,6 +22,10 @@ import { environment } from 'src/environments/environment';
 import { initializeApp } from '@firebase/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { TestnavComponent } from './test-components/testnav/testnav.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,8 @@ import { provideFirebaseApp } from '@angular/fire/app';
     AuthorListComponent,
     NavbarComponent,
     LoginComponent,
-    BooktestComponent
+    BooktestComponent,
+    TestnavComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,12 @@ import { provideFirebaseApp } from '@angular/fire/app';
     FormsModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth())
+    provideAuth(() => getAuth()),
+    BrowserAnimationsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,17 +25,17 @@ export class BooktestComponent implements OnInit {
     pages: new FormControl(),
     publishDate: new FormControl(),
     author: new FormControl(),
+    coverLink: new FormControl(),
   })
 
   submitBook(title: string, pages: string, publishDate: string, author: string) {
 
-    let nPublish = new Date(publishDate)
-    let authorId = author.replace(/^([^ ]+ ){2}/,'');
+    let nPublish = new Date(publishDate);
     const data = {
       title: title,
       pages: pages,
       publishDate: nPublish,
-      author: authorId,
+      author: author,
     }
 
     console.log(data);
@@ -47,16 +47,21 @@ export class BooktestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // Get all books
-    this.bapi.GetBooks().subscribe(data => {
-      console.log(data)
-      this.books = data;
-    });
+    this.ShowAuthors();
+    this.ShowBooks();
+  }
 
+  ShowAuthors() {
     this.aapi.GetAuthors().subscribe( data => {
       console.log(data)
       this.authors = data;
     });
+  }
 
+  ShowBooks() {
+    this.bapi.GetBooks().subscribe(data => {
+      console.log(data)
+      this.books = data;
+    });
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestnavComponent } from 'src/app/test-components/testnav/testnav.component';
 
 @Component({
   selector: 'app-navbar',

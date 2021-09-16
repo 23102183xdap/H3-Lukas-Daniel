@@ -17,27 +17,24 @@
     <input type="date" id="publishDate" #publishDate name="publishDate" formControlName="publishDate">
     <br>
     <label for="author">Author </label>
-    <select name="author" id="author" class="selectpicker" data-live-search="true" #author >
-        <option *ngFor="let a of authors">
-            {{ a.firstname }} {{a.lastname}} {{ a.id}}
-
+    <select name="author" id="author" class="selectpicker" #author >
+        <option *ngFor="let a of authors" value="{{a.id}}">
+            {{ a.firstname }} {{a.lastname}}
         </option>
-
     </select>
     <!-- <input type="text" id="coverLink" #coverLink name="coverLink" formControlName="coverLink"> -->
-
     <button  type="submit">Submit</button>
-</form>  
+</form>
 <br>
 <h2>Her er alle vores nice bøger</h2>
-<div *ngFor="let b of books" >
-    
+<div *ngFor="let b of books; index as i" >
+
     <h3>title: {{ b.title }}</h3>
-    <h3 *ngIf="b.author">author: {{ b.author["firstname"] }} {{ b.author.lastname }} </h3>
+    <h3 *ngIf="b.author">author: {{b.author[i]["firstname"]}} </h3>
 </div>
 
 <div *ngFor="let i of authors" >
-    author id  : 
+    author id  :
     {{ i.id }}
     author name :
     {{ i.firstname }} {{ i.lastname }}
