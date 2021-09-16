@@ -20,6 +20,7 @@ import { environment } from 'src/environments/environment';
 import { initializeApp } from '@firebase/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { provideFirebaseApp } from '@angular/fire/app';
+import { BookComponent } from './views/book/book.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { provideFirebaseApp } from '@angular/fire/app';
     AuthorListComponent,
     NavbarComponent,
     LoginComponent,
-    BooktestComponent
+    BooktestComponent,
+    BookComponent
   ],
   imports: [
     BrowserModule,
