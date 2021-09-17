@@ -15,7 +15,7 @@ export class BooktestComponent implements OnInit {
 
 
   books?: Array<any>;
-  authors?: Array<any>;
+  authorsList?: Array<any>;
 
   constructor(public bapi: BookService, public aapi: AuthorService) { }
 
@@ -24,18 +24,18 @@ export class BooktestComponent implements OnInit {
     title: new FormControl(),
     pages: new FormControl(),
     publishDate: new FormControl(),
-    author: new FormControl(),
+    authors: new FormControl(),
     coverLink: new FormControl(),
   });
 
-  submitBook(title: string, pages: string, publishDate: string, author: string) {
+  submitBook(title: string, pages: string, publishDate: string, authors: string[]) {
 
     let nPublish = new Date(publishDate);
     const data = {
       title: title,
       pages: pages,
       publishDate: nPublish,
-      author: author,
+      author: authors,
     }
 
     console.log(data);
@@ -54,7 +54,7 @@ export class BooktestComponent implements OnInit {
   ShowAuthors() {
     this.aapi.GetAuthors().subscribe(data => {
       console.log(data)
-      this.authors = data;
+      this.authorsList = data;
     });
   }
 
