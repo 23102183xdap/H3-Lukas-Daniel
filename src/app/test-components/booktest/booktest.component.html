@@ -1,6 +1,3 @@
-<app-navbar></app-navbar>
-
-
 <h1>Her tester vi book Endpoint</h1>
 <br>
 <h2>Tilføj en bog</h2>
@@ -30,7 +27,7 @@
 <div *ngFor="let b of books; index as i" >
 
     <h3>title: {{ b.title }}</h3>
-    <h3 *ngIf="b.author">author: {{b.author[i]["firstname"]}} </h3>
+    <h3 *ngIf="b.author[i]">author: {{b.author[i]["firstname"]}} </h3>
 </div>
 
 <div *ngFor="let i of authors" >

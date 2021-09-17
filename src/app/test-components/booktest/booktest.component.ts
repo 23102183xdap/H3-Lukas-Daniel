@@ -26,7 +26,7 @@ export class BooktestComponent implements OnInit {
     publishDate: new FormControl(),
     author: new FormControl(),
     coverLink: new FormControl(),
-  })
+  });
 
   submitBook(title: string, pages: string, publishDate: string, author: string) {
 
@@ -51,15 +51,17 @@ export class BooktestComponent implements OnInit {
     this.ShowBooks();
   }
 
+  ShowAuthors() {
     this.aapi.GetAuthors().subscribe(data => {
-    console.log(data)
-    this.authors = data;
-  });
+      console.log(data)
+      this.authors = data;
+    });
+  }
 
-ShowBooks() {
-  this.bapi.GetBooks().subscribe(data => {
-    console.log(data)
-    this.books = data;
-  });
+  ShowBooks() {
+    this.bapi.GetBooks().subscribe(data => {
+      console.log(data)
+      this.books = data;
+    });
+  }
 }
-

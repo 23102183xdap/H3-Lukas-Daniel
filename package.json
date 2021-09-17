@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "inst": "npm i"
   },
   "private": true,
   "dependencies": {
@@ -24,7 +25,6 @@
     "bootstrap": "^5.1.0",
     "bootstrap-select": "^1.13.18",
     "firebase": "^9.0.1",
-    "mdb-angular-ui-kit": "^1.1.0",
     "rxfire": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
