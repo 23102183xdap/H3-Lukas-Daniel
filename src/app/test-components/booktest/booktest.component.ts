@@ -47,19 +47,19 @@ export class BooktestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.ShowAuthors();
-    this.ShowBooks();
+    // this.ShowAuthors();
+    // this.ShowBooks();
   }
 
-    this.aapi.GetAuthors().subscribe(data => {
-    console.log(data)
-    this.authors = data;
-  });
+//     this.aapi.GetAuthors().subscribe(data => {
+//     console.log(data)
+//     this.authors = data;
+//   });
 
-ShowBooks() {
-  this.bapi.GetBooks().subscribe(data => {
-    console.log(data)
-    this.books = data;
-  });
+// ShowBooks() {
+//   this.bapi.GetBooks().subscribe(data => {
+//     console.log(data)
+//     this.books = data;
+//   });
 }
 

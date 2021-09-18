@@ -24,3 +24,9 @@
   text-align: center;
   height: 40%;
 }
+.active {
+  background-color: green;
+   &:hover{
+    background-color: green;
+  }
+}
