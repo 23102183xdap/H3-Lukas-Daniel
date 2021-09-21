@@ -1,4 +1,4 @@
-import { CreateAuthorTestComponent } from './test-components/create-author-test/create-author-test.component';
+import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
 import { LoginComponent } from './views/before-login/login/login.component';
 import { HomeComponent } from './views/before-login/home/home.component';
@@ -24,8 +24,9 @@ const routes: Routes = [
     component: BooktestComponent
   },
   {
-    path: 'author',
-    component: CreateAuthorTestComponent
+    path: 'authors',
+    component: AuthorListComponent,
+    loadChildren: () => import('./components/author/author.module').then(m => m.AuthorModule)
   }
 ];
 

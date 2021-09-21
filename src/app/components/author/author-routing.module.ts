@@ -8,7 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'authors',
-    component: AuthorListComponent,
+    component: AuthorListComponent
   },
   {
     path: 'authors/create',

@@ -1,3 +1,4 @@
+import { AuthorModule } from './components/author/author.module';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
@@ -12,20 +13,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/before-login/home/home.component';
-// import { BookListComponent } from './components/book/book-list/book-list.component';
-// import { BookCardComponent } from './components/book/book-card/book-card.component';
-import { CreateAuthorTestComponent } from './test-components/create-author-test/create-author-test.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './views/before-login/login/login.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
-import { environment } from 'src/environments/environment';
 
-// firebase
-import { initializeApp } from '@firebase/app';
-import { getAuth, provideAuth } from '@angular/fire/auth';
-import { getStorage, provideStorage } from '@angular/fire/storage'
-import { provideFirebaseApp } from '@angular/fire/app';
 import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
@@ -34,7 +26,6 @@ import { MatOptionModule } from '@angular/material/core';
     HomeComponent,
     // BookListComponent,
     // BookCardComponent,
-    CreateAuthorTestComponent,
     NavbarComponent,
     LoginComponent,
     BooktestComponent
@@ -52,7 +43,8 @@ import { MatOptionModule } from '@angular/material/core';
     MatListModule,
     MatOptionModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AuthorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
