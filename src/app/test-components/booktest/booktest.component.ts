@@ -46,8 +46,8 @@ export class BooktestComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.ShowAuthors();
-    // this.ShowBooks();
+    this.ShowAuthors();
+    this.ShowBooks();
   }
 
   ShowAuthors() {
