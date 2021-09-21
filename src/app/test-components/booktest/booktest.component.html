@@ -16,12 +16,6 @@
   <mat-form-field>
     <mat-label>Author(s)</mat-label>
     <mat-select name="author" id="author" #authors formControlName="authors" multiple>
-      <!-- <mat-select-trigger>
-        {{authors.value.firstname ? authors.value[0] : ''}}
-        <span *ngIf="authors.value?.length > 1" class="additional-selection">
-          (+{{authors.value.length - 1}} {{authors.value?.length === 2 ? 'other' : 'others'}})
-        </span>
-      </mat-select-trigger> -->
       <mat-option *ngFor="let a of authorsList; index as i" value="{{a.id}}">{{ a.firstname }} {{a.lastname}}</mat-option>
     </mat-select>
   </mat-form-field>

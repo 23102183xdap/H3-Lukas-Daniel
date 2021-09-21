@@ -16,8 +16,6 @@ import { HomeComponent } from './views/before-login/home/home.component';
 // import { BookCardComponent } from './components/book/book-card/book-card.component';
 import { CreateAuthorTestComponent } from './test-components/create-author-test/create-author-test.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthorCardComponent } from './components/author/author-card/author-card.component';
-import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './views/before-login/login/login.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
@@ -37,8 +35,6 @@ import { MatOptionModule } from '@angular/material/core';
     // BookListComponent,
     // BookCardComponent,
     CreateAuthorTestComponent,
-    AuthorCardComponent,
-    AuthorListComponent,
     NavbarComponent,
     LoginComponent,
     BooktestComponent
@@ -49,9 +45,6 @@ import { MatOptionModule } from '@angular/material/core';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()),
-    provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
