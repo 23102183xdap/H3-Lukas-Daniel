@@ -1,3 +1,4 @@
+import { CreateAuthorTestComponent } from './test-components/create-author-test/create-author-test.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
 import { LoginComponent } from './views/before-login/login/login.component';
 import { HomeComponent } from './views/before-login/home/home.component';
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'booktest',
     component: BooktestComponent
+  },
+  {
+    path: 'author',
+    component: CreateAuthorTestComponent
   }
 ];
 

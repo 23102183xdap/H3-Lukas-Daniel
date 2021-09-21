@@ -1,7 +1,6 @@
 import { AuthorService } from '../../shared/services/author.service';
 import { BookService } from '../../shared/services/book.service';
 import { Component, OnInit } from '@angular/core';
-import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { FormControl, FormGroup } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -15,7 +14,7 @@ export class BooktestComponent implements OnInit {
 
 
   books?: Array<any>;
-  authors?: Array<any>;
+  authorsList?: Array<any>;
 
   constructor(public bapi: BookService, public aapi: AuthorService) { }
 
@@ -24,18 +23,18 @@ export class BooktestComponent implements OnInit {
     title: new FormControl(),
     pages: new FormControl(),
     publishDate: new FormControl(),
-    author: new FormControl(),
+    authors: new FormControl(),
     coverLink: new FormControl(),
-  })
+  });
 
-  submitBook(title: string, pages: string, publishDate: string, author: string) {
+  submitBook(title: string, pages: string, publishDate: string, authors: string[]) {
 
     let nPublish = new Date(publishDate);
     const data = {
       title: title,
       pages: pages,
       publishDate: nPublish,
-      author: author,
+      author: authors,
     }
 
     console.log(data);
@@ -51,15 +50,17 @@ export class BooktestComponent implements OnInit {
     // this.ShowBooks();
   }
 
-//     this.aapi.GetAuthors().subscribe(data => {
-//     console.log(data)
-//     this.authors = data;
-//   });
+  ShowAuthors() {
+    this.aapi.GetAuthors().subscribe(data => {
+      console.log(data)
+      this.authorsList = data;
+    });
+  }
 
-// ShowBooks() {
-//   this.bapi.GetBooks().subscribe(data => {
-//     console.log(data)
-//     this.books = data;
-//   });
+  ShowBooks() {
+    this.bapi.GetBooks().subscribe(data => {
+      console.log(data)
+      this.books = data;
+    });
+  }
 }
-

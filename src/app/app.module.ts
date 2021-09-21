@@ -3,8 +3,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/before-login/home/home.component';
 // import { BookListComponent } from './components/book/book-list/book-list.component';
@@ -21,11 +26,9 @@ import { environment } from 'src/environments/environment';
 // firebase
 import { initializeApp } from '@firebase/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getStorage, provideStorage } from '@angular/fire/storage'
 import { provideFirebaseApp } from '@angular/fire/app';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { TestnavComponent } from './test-components/testnav/testnav.component';
-import { MatIconModule } from '@angular/material/icon';
+import { MatOptionModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
     AuthorListComponent,
     NavbarComponent,
     LoginComponent,
-    BooktestComponent,
-    TestnavComponent
+    BooktestComponent
   ],
   imports: [
     BrowserModule,
@@ -49,11 +51,15 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
+    provideStorage(() => getStorage()),
     BrowserAnimationsModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
