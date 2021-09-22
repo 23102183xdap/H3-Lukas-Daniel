@@ -1,6 +1,7 @@
 import { AuthorModule } from './components/author/author.module';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatInputModule } from '@angular/material/input';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,6 +23,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CustomerService } from './shared/services/customer.service';
+import { LoginPageComponent } from './components/login/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { CustomerService } from './shared/services/customer.service';
     // BookCardComponent,
     NavbarComponent,
     LoginComponent,
-    BooktestComponent
+    BooktestComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,9 @@ import { CustomerService } from './shared/services/customer.service';
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

@@ -5,7 +5,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import { Router } from '@angular/router';
 import { User } from '../models/user/user';
-import { CustomerService } from './customer.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +15,9 @@ export class AuthService {
   isAdmin: any;
 
   constructor(
-    public auth: AngularFireAuth,
-    public router: Router,
-    public store: AngularFirestore,
-    public customer: CustomerService) {
+    private auth: AngularFireAuth,
+    private router: Router,
+    private store: AngularFirestore) {
     this.auth.authState.subscribe(user => {
       if(user) {
         this.userData = user;
@@ -63,7 +61,6 @@ export class AuthService {
       const result = await this.auth.createUserWithEmailAndPassword(email, password);
       this.SendVerifyMail();
       this.SetUserData(result.user);
-      this.customer
     } catch (error: any) {
       console.log(error.message);
     }
