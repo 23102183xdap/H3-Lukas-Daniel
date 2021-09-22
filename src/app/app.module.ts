@@ -24,6 +24,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CustomerService } from './shared/services/customer.service';
 import { LoginPageComponent } from './components/login/login-page/login-page.component';
+import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LoginPageComponent } from './components/login/login-page/login-page.com
     NavbarComponent,
     LoginComponent,
     BooktestComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    UpdateAuthorComponent
   ],
   imports: [
     BrowserModule,
