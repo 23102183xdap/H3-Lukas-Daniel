@@ -16,19 +16,23 @@ export class BookService {
     return this.http.get<Book[]>(`${this.baseUrl}/`)
   }
 
-  public GetBook(bookId?: number): Observable<Book> {
-    return this.http.get<Book>(`${this.baseUrl}/book/${bookId}`)
+  public GetBookByID(bookId?: number): Observable<Book> {
+    return this.http.get<Book>(`${this.baseUrl}/book/${bookId}`);
+  }
+
+  public GetBookByTitle(title?: string): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.baseUrl}/book/title/${title}`);
   }
 
   public DeleteBook(bookId?: number): Observable<Book> {
-    return this.http.delete<Book>(`${this.baseUrl}/delete/${bookId}`)
-  }  
+    return this.http.delete<Book>(`${this.baseUrl}/delete/${bookId}`);
+  }
   public CreateBook(data: any): Observable<Book> {
-    return this.http.post<Book>(`${this.baseUrl}/create`, data)
+    return this.http.post<Book>(`${this.baseUrl}/create`, data);
   }
 
   public UpdateBook( data: any, bookId?: number): Observable<Book> {
-    return this.http.put<Book>(`${this.baseUrl}/update/${bookId}`, data)
+    return this.http.put<Book>(`${this.baseUrl}/update/${bookId}`, data);
   }
 
 }

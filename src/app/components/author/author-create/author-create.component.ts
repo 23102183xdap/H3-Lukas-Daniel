@@ -23,7 +23,7 @@ export class AuthorCreateComponent implements OnInit {
   submitAuthor(firstName: string, lastName: string) {
     const data = {
       firstname: firstName,
-      lastName: lastName,
+      lastname: lastName,
     }
 
     this.api.CreateAuthor(data).subscribe((res: any) => {
