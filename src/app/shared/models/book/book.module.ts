@@ -1,3 +1,5 @@
+import { Author } from '../author/author.module';
+
 export interface Book {
   id: number;
   title: string;
@@ -5,5 +7,5 @@ export interface Book {
   coverLink: string;
   series: number;
   publishDate: Date;
-  author?: any;
+  authors?: Array<Author>;
 }
