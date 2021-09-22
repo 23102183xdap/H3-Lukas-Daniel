@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { AuthorModule } from './components/author/author.module';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -58,7 +59,8 @@ import { UpdateAuthorComponent } from './test-components/update-author/update-au
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent]

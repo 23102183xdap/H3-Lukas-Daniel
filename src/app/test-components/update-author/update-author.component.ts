@@ -53,6 +53,7 @@ export class UpdateAuthorComponent implements OnInit {
     }
     this.api.UpdateAuthor(data, this.author?.id).subscribe(res => {
       console.log(res);
+      this.isSelected = false;
       this.getAll();
     }, ((error: any) => {
       console.log(error.message);
