@@ -1,57 +1,55 @@
-.con1 {
+.con {
   margin: 40px auto 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  overflow: hsl(262deg 52% 47%);
-  border-radius: 20px;
-  box-shadow:4px 6px 4px #a492e2;
-
-  background-color: #b2a0f3;
-
-  h1, h2{
-    box-shadow: 0px 0px 250px 10px #9687cf;
-
-  }
-  h1, h2, img {
-    padding: 10px;
-    border-radius: 16px;
-    border-radius: 14px;
-  }
-
-}
-.con2{
-  padding-top: 30px;
-  margin: 40px auto 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
-  overflow: hsl(262deg 52% 47%);
-  border-radius: 20px;
-  box-shadow:4px 6px 4px #a492e2;
-  background-color: #b2a0f3;
   overflow: hidden;
+
+  h1, h2 {
+    padding: 10px;
+  }
 
   img{
     max-width: 100%;
-    height: 600px;
+    height: 400px;
+    margin-top: 50px;
   }
+
+  .auth {
+    button {
+      max-height: 3em;
+      margin: 0px 0 5px 0;
+      font-size: 1.2em;
+    }
+    button:nth-child(1) {
+      margin-right: 10px;
+    }
+  }
+
+  .wrap-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .wrap-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   .buttons {
     display: flex;
     flex-direction: row;
-
     div{
       p{
         width: 20px;
         height: 20px;
         margin: 10px;
         border-radius: 50%;
-        background-color: rgba(255,255,255,0.6);
+        background-color: rgba(99, 99, 99, 0.2);
       }
       .active{
-        background-color: yellowgreen;
+        background-color: #9980f1;
       }
     }
   }

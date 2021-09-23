@@ -1,5 +1,6 @@
-<div>
-  <form [formGroup]="loginForm" (ngSubmit)="this.auth.SignIn(mail.value, pwd.value)">
+<div class="container">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="this.auth.SignIn(mail.value, pwd.value)">
+    <p>Login</p>
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
       <input type="email" matInput #mail [formControl]="email" [errorStateMatcher]="matcher"
@@ -28,8 +29,10 @@
         Password must not exceed 24 characters
       </mat-error>
     </mat-form-field>
-    <button mat-raised-button color="primary" type="submit">Login</button>
-    <button mat-raised-button color="primary" type="button" (click)="this.auth.GoogleAuth()"><i
-        class="fab fa-google"></i></button>
+    <div class="wrap">
+      <button mat-raised-button color="primary" type="submit">Login</button>
+      <button mat-raised-button color="primary" type="button" (click)="this.auth.GoogleAuth()"><i
+          class="fab fa-google"></i></button>
+    </div>
   </form>
 </div>
