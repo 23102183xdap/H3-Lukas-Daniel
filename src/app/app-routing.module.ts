@@ -5,38 +5,44 @@ import { LoginComponent } from './views/before-login/login/login.component';
 import { HomeComponent } from './views/before-login/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OurBooksComponent } from './views/before-login/our-books/our-books.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'booktest',
-    component: BooktestComponent
+    component: BooktestComponent,
   },
   {
     path: 'authors',
     component: AuthorListComponent,
-    loadChildren: () => import('./components/author/author.module').then(m => m.AuthorModule)
+    loadChildren: () =>
+      import('./components/author/author.module').then((m) => m.AuthorModule),
   },
   {
     path: 'updatetest',
-    component: UpdateAuthorComponent
-  }
+    component: UpdateAuthorComponent,
+  },
+  {
+    path: 'our-books',
+    component: OurBooksComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

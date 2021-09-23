@@ -1,0 +1,13 @@
+<div class="bookWrapper">
+  <div *ngFor="let b of this.books">
+    <app-book-card
+      book_title="{{ b.title }}"
+      book_pages="{{ b.pages }}"
+      book_series="{{ b.series }}"
+      book_popularity="{{ b.popularity }}"
+      book_publishDate="{{ b.publishDate }}"
+      book_author="{{ b.author[0].firstname }}"
+    >
+    </app-book-card>
+  </div>
+</div>

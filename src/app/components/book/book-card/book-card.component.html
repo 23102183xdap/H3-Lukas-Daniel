@@ -1,1 +1,25 @@
-<p>book-card works!</p>
+<div class="cardWrapper">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ this.book.title }}</mat-card-title>
+      <mat-card-subtitle> {{ this.book.author }} </mat-card-subtitle>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="https://images-na.ssl-images-amazon.com/images/I/21cqTA9upwL._SX323_BO1,204,203,200_.jpg"
+      alt="Photo of a Shiba Inu"
+    />
+    <mat-card-content>
+      <p>{{ this.book.pages }} pages</p>
+      <p *ngIf="this.book.series">Number {{ this.book.series }} in series</p>
+      <p *ngIf="!this.book.series">Standalone Book, Not in a series</p>
+      <p>Viewed {{ this.book.popularity }} times</p>
+      <p>Published at {{ this.book.publishDate }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Details</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

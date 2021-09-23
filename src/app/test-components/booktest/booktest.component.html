@@ -1,30 +1,52 @@
 <h1>Her tester vi book Endpoint</h1>
-<br>
+<br />
 <h2>Tilføj en bog</h2>
-<form [formGroup]="createBookForm" (ngSubmit)="submitBook(title.value, pages.value, publishDate.value, authors.value)">
+<form
+  [formGroup]="createBookForm"
+  (ngSubmit)="
+    submitBook(title.value, pages.value, publishDate.value, authors.value)
+  "
+>
   <label>Create New Book</label>
-  <br>
+  <br />
   <label for="title">Title of the book </label>
-  <input type="text" id="title" #title name="title" formControlName="title">
-  <br>
+  <input type="text" id="title" #title name="title" formControlName="title" />
+  <br />
   <label for="pages">Page count </label>
-  <input type="number" id="pages" #pages name="pages" formControlName="pages">
-  <br>
+  <input type="number" id="pages" #pages name="pages" formControlName="pages" />
+  <br />
   <label for="publishDate">Publish date </label>
-  <input type="date" id="publishDate" #publishDate name="publishDate" formControlName="publishDate">
-  <br>
+  <input
+    type="date"
+    id="publishDate"
+    #publishDate
+    name="publishDate"
+    formControlName="publishDate"
+  />
+  <br />
   <mat-form-field>
     <mat-label>Author(s)</mat-label>
-    <mat-select name="author" id="author" #authors formControlName="authors" multiple>
-      <mat-option *ngFor="let a of authorsList; index as i" value="{{a.id}}">{{ a.firstname }} {{a.lastname}}</mat-option>
+    <mat-select
+      name="author"
+      id="author"
+      #authors
+      formControlName="authors"
+      multiple
+    >
+      <mat-option *ngFor="let a of authorsList; index as i" value="{{ a.id }}"
+        >{{ a.firstname }} {{ a.lastname }}</mat-option
+      >
     </mat-select>
   </mat-form-field>
   <!-- <input type="text" id="coverLink" #coverLink name="coverLink" formControlName="coverLink"> -->
   <button type="submit">Submit</button>
 </form>
-<br>
+<br />
 <h2>Her er alle vores nice bøger</h2>
 <div *ngFor="let b of books; index as i">
   <h3>title: {{ b.title }}</h3>
-  <h2>author(s): <h3 *ngFor="let a of books; index as j">{{a.author[j]["firstname"]}}</h3></h2>
+
+  <h3 *ngFor="let a of b.authors; index as j">
+    {{ a[j].firstname }}
+  </h3>
 </div>

@@ -1,0 +1,10 @@
+.bookWrapper {
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  div {
+    margin: 20px;
+  }
+}
