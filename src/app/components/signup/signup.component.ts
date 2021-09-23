@@ -56,12 +56,17 @@ export class SignupComponent implements OnInit {
 
   async CreateCustomer(firstname: string, lastname: string, birthdate: string) {
     let nBirthdate = new Date(birthdate)
+
     const data = {
       id: this.userData.uid,
       firstname: firstname,
       lastname: lastname,
-      birthdate: nBirthdate
+      birthdate: nBirthdate,
     }
+
+    let dName = data.firstname + " " + data.lastname
+
+    this.customer.SetDisplayName(dName);
     this.customer.CreateCustomer(data).subscribe((res) => {
       console.log(res);
     }, (error) => {

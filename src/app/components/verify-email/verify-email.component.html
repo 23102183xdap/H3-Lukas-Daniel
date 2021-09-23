@@ -1,1 +1,10 @@
-<p>verify-email works!</p>
+<div class="container">
+  <div class="verify-wrap">
+    <div class="verify-email" *ngIf="auth.userState as user">
+      <p>Verification mail is sent to:<strong>{{user.email}}</strong></p>
+    </div>
+    <div class="verify-resend">
+      <button type="button" (click)="auth.SendVerifyMail()">Resend verification email</button>
+    </div>
+  </div>
+</div>

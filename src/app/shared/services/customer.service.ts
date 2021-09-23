@@ -1,14 +1,24 @@
+import { AuthService } from './auth.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Customer } from './../customer/customer';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import { User } from '../models/user/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private store: AngularFirestore,
+    @Inject(AuthService) private user: User) { }
+
+  userData = JSON.parse(localStorage.getItem('user') || '{}')
 
   readonly baseURL = "http://localhost:8080/api/customer";
 
@@ -34,5 +44,10 @@ export class CustomerService {
 
   public UpdateCustoemr(data: any, id?: string): Observable<Customer> {
     return this.http.put<Customer>(`${this.baseURL}/update/${id}`, data);
+  }
+
+  public SetDisplayName(displayName: string) {
+    this.store.doc(`users/${this.userData.uid}`)
+    .set({displayName: displayName}, {merge: true})
   }
 }
