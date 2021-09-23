@@ -22,10 +22,10 @@
       <mat-error *ngIf="password.hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
-      <mat-error *ngIf="password.hasError('password.minlength')">
+      <mat-error *ngIf="password.hasError('minlength')">
         Password must be at least 8 characters
       </mat-error>
-      <mat-error *ngIf="password.hasError('password.maxlength')">
+      <mat-error *ngIf="password.hasError('maxlength')">
         Password must not exceed 24 characters
       </mat-error>
     </mat-form-field>
@@ -33,6 +33,9 @@
       <button mat-raised-button color="primary" type="submit">Login</button>
       <button mat-raised-button color="primary" type="button" (click)="this.auth.GoogleAuth()"><i
           class="fab fa-google"></i></button>
+    </div>
+    <div class="signup">
+      Don't have an <strong><a routerLink="sign-up">account?</a></strong>
     </div>
   </form>
 </div>

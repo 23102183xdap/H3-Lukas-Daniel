@@ -157,4 +157,15 @@ export class AuthService {
       merge: true
     });
   }
+
+  /**
+   * Sign out
+   *
+   * @memberof AuthService
+   */
+  async SignOut() {
+    this.auth.signOut();
+    localStorage.removeItem('user');
+    this.router.navigate(['login']);
+  }
 }

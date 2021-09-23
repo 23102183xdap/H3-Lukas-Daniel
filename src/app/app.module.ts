@@ -29,6 +29,8 @@ import { OurBooksComponent } from './views/before-login/our-books/our-books.comp
 import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
 import { BookIstComponent } from './components/book/book-ist/book-ist.component';
 import { BookCardComponent } from './components/book/book-card/book-card.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { BookCardComponent } from './components/book/book-card/book-card.compone
     UpdateAuthorComponent,
     BookIstComponent,
     BookCardComponent,
+    SignupComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
