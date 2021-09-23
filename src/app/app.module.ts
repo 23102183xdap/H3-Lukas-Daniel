@@ -27,6 +27,8 @@ import { CustomerService } from './shared/services/customer.service';
 import { LoginPageComponent } from './components/login/login-page/login-page.component';
 import { OurBooksComponent } from './views/before-login/our-books/our-books.component';
 import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
+import { BookIstComponent } from './components/book/book-ist/book-ist.component';
+import { BookCardComponent } from './components/book/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { UpdateAuthorComponent } from './test-components/update-author/update-au
     LoginPageComponent,
     OurBooksComponent,
     UpdateAuthorComponent,
+    BookIstComponent,
+    BookCardComponent,
   ],
   imports: [
     BrowserModule,

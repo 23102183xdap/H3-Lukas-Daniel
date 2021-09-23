@@ -25,10 +25,8 @@
     "bootstrap": "^5.1.0",
     "bootstrap-select": "^1.13.18",
     "firebase": "^9.0.1",
-    "ngx-useful-swiper": "^10.0.1",
     "rxfire": "^6.0.0",
     "rxjs": "~6.6.0",
-    "swiper": "^6.8.4",
     "tslib": "^2.2.0",
     "zone.js": "~0.11.4"
   },

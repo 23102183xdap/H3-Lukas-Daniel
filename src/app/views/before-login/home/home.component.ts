@@ -3,7 +3,6 @@ import { pipe } from 'rxjs';
 import { Book } from 'src/app/shared/models/book/book.module';
 import { BookService } from 'src/app/shared/services/book.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { SwiperOptions } from 'swiper';
 
 @Component({
   selector: 'app-home',
