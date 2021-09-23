@@ -1,27 +1,35 @@
-<form [formGroup]="loginForm" (ngSubmit)="this.auth.SignIn(mail.value, pwd.value)">
-  <mat-form-field appearance="fill">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput #mail [formControl]="email" [errorStateMatcher]="matcher" placeholder="Ex. johndoe@gmail.com">
-    <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
-      Please enter a valid email address
-    </mat-error>
-    <mat-error *ngIf="email.hasError('required')">
-      Email is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Password</mat-label>
-    <input type="password" matInput #pwd [formControl]="password" [errorStateMatcher]="matcher" placeholder="Password">
-    <mat-error *ngIf="password.hasError('password') && !password.hasError('required')">
-      Please enter valid password
-    </mat-error>
-    <mat-error *ngIf="password.hasError('password.minlength')">
-      Password must be at least 8 characters
-    </mat-error>
-    <mat-error *ngIf="password.hasError('password.maxlength')">
-      Password must not exceed 24 characters
-    </mat-error>
-  </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Login</button>
-  <button mat-raised-button color="primary" type="button" (click)="this.auth.GoogleAuth()"><i class="fab fa-google"></i></button>
-</form>
+<div>
+  <form [formGroup]="loginForm" (ngSubmit)="this.auth.SignIn(mail.value, pwd.value)">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput #mail [formControl]="email" [errorStateMatcher]="matcher"
+        placeholder="Ex. johndoe@gmail.com">
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput #pwd [formControl]="password" [errorStateMatcher]="matcher"
+        placeholder="Password">
+      <mat-error *ngIf="password.hasError('password') && !password.hasError('required')">
+        Please enter valid password
+      </mat-error>
+      <mat-error *ngIf="password.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="password.hasError('password.minlength')">
+        Password must be at least 8 characters
+      </mat-error>
+      <mat-error *ngIf="password.hasError('password.maxlength')">
+        Password must not exceed 24 characters
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Login</button>
+    <button mat-raised-button color="primary" type="button" (click)="this.auth.GoogleAuth()"><i
+        class="fab fa-google"></i></button>
+  </form>
+</div>
