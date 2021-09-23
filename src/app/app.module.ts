@@ -24,6 +24,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CustomerService } from './shared/services/customer.service';
 import { LoginPageComponent } from './components/login/login-page/login-page.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { OurBooksComponent } from './views/before-login/our-books/our-books.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { LoginPageComponent } from './components/login/login-page/login-page.com
     NavbarComponent,
     LoginComponent,
     BooktestComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    OurBooksComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,9 +59,10 @@ import { LoginPageComponent } from './components/login/login-page/login-page.com
     AngularFireModule.initializeApp(environment.firebaseConfig),
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    NgxUsefulSwiperModule,
   ],
   providers: [CustomerService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

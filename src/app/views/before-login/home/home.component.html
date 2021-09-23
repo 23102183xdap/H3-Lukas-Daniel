@@ -1,2 +1,21 @@
-<div class="container" style="margin-top: 70px;">
+<div class="container con1">
+  <h1 *ngIf="this.booksLen === 1">Lyt til {{ this.booksLen }} bog</h1>
+  <h1 *ngIf="this.booksLen > 1">Lyt til {{ this.booksLen }} bøger</h1>
+  <h2>Tilmeld dig i dag!</h2>
+</div>
+
+<div class="container con2">
+  <div *ngFor="let i of img">
+    <img *ngIf="this.currentImg == i.index" src="{{ i.url }}" />
+  </div>
+  <div class="buttons">
+    <div *ngFor="let b of img">
+      <p
+        *ngIf="b.url"
+        class="button"
+        [class.active]="b.index == this.currentImg"
+        (click)="chooseImg(b.index)"
+      ></p>
+    </div>
+  </div>
 </div>
