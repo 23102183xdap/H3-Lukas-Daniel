@@ -18,22 +18,22 @@ export class AuthorService {
     return this.http.get<Author[]>(`${this.baseUrl}/`);
   }
 
-  public GetAuthorByID(authorId?: number): Observable<Author> {
-    return this.http.get<Author>(`${this.baseUrl}/id/${authorId}`);
+  public GetAuthorByID(authorId?: string): Observable<Author> {
+    return this.http.get<Author>(`${this.baseUrl}/author/id/${authorId}`);
   }
 
   public GetAuthorByName(firstname?: string): Observable<Author[]> {
     return this.http.get<Author[]>(`${this.baseUrl}/firstname/${firstname}`);
   }
 
-  public DeleteAuthor(authorId?: number): Observable<Author> {
+  public DeleteAuthor(authorId?: string): Observable<Author> {
     return this.http.delete<Author>(`${this.baseUrl}/delete/${authorId}`);
   }
   public CreateAuthor(data: any): Observable<Author> {
     return this.http.post<Author>(`${this.baseUrl}/create`, data);
   }
 
-  public UpdateAuthor(data: any, id?: number): Observable<Author> {
+  public UpdateAuthor(data: any, id?: string): Observable<Author> {
     return this.http.put<Author>(`${this.baseUrl}/update/${id}`, data);
   }
 

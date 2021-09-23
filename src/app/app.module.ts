@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { AuthorModule } from './components/author/author.module';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -24,8 +25,8 @@ import { environment } from 'src/environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { CustomerService } from './shared/services/customer.service';
 import { LoginPageComponent } from './components/login/login-page/login-page.component';
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { OurBooksComponent } from './views/before-login/our-books/our-books.component';
+import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { OurBooksComponent } from './views/before-login/our-books/our-books.comp
     BooktestComponent,
     LoginPageComponent,
     OurBooksComponent,
+    UpdateAuthorComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,7 @@ import { OurBooksComponent } from './views/before-login/our-books/our-books.comp
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    NgxUsefulSwiperModule,
+    MatButtonModule,
   ],
   providers: [CustomerService],
   bootstrap: [AppComponent],

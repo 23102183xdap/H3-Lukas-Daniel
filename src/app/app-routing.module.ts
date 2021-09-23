@@ -1,3 +1,4 @@
+import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
 import { LoginComponent } from './views/before-login/login/login.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
     path: 'authors',
     component: AuthorListComponent,
     loadChildren: () => import('./components/author/author.module').then(m => m.AuthorModule)
+  },
+  {
+    path: 'updatetest',
+    component: UpdateAuthorComponent
   }
 ];
 

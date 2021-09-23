@@ -1,0 +1,25 @@
+<form [formGroup]="selectForm" (ngSubmit)="selectAuthor(sAuthor.value)">
+  <label>Author</label>
+  <br>
+  <select #sAuthor formControlName="author">
+    <option *ngFor="let a of authors" value="{{a.id}}">{{a.firstname}} {{a.lastname}}</option>
+  </select>
+  <button type="submit">Select</button>
+</form>
+<br>
+<form [formGroup]="updateForm" *ngIf="isSelected == true" (ngSubmit)="updateAuthor(firstName.value, lastName.value)">
+  <br>
+  <h3>Author info:</h3>
+  <br>
+  <h3>{{this.author?.firstname}} {{this.author?.lastname}}</h3>
+  <br>
+  <label for="firstname">Firstname:</label>
+  <input #firstName type="text" name="firstname" id="firstname">
+  <br>
+  <label for="lastname">Lastname:</label>
+  <input #lastName type="text" name="lastname" id="lastname">
+  <button type="submit">Submit</button>
+</form>
+<br>
+<h3>Author(s):</h3>
+<h3 *ngFor="let a of authors">{{a.firstname}} {{a.lastname}}</h3>
