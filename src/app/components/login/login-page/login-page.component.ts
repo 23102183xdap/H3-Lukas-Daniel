@@ -33,7 +33,7 @@ export class LoginPageComponent implements OnInit {
 
   loginForm = new FormGroup({
     email: this.email,
-    password: new FormControl()
+    password: this.password
   })
 
   ngOnInit(): void {
