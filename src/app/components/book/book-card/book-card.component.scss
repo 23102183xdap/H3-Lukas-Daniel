@@ -1,0 +1,16 @@
+.cardWrapper {
+  padding: 2px;
+
+  width: 360px;
+  mat-card-title{
+    overflow: hidden;
+  }
+  img {
+    height: 250px;
+  }
+  mat-card {
+    //flex: 1;
+    width: 100%;
+  }
+}
+

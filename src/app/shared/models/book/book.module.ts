@@ -1,11 +1,12 @@
 import { Author } from '../author/author.module';
 
 export interface Book {
-  id: number;
+  id?: string;
   title: string;
-  pages: string;
-  coverLink: string;
+  pages: number;
+  coverLink?: string;
   series: number;
   publishDate: Date;
   authors?: Array<Author>;
+  popularity: number;
 }

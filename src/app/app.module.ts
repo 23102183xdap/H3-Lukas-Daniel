@@ -30,8 +30,9 @@ import { CustomerService } from './shared/services/customer.service';
 import { LoginPageComponent } from './components/login/login-page/login-page.component';
 import { OurBooksComponent } from './views/before-login/our-books/our-books.component';
 import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
-import { BookIstComponent } from './components/book/book-ist/book-ist.component';
 import { BookCardComponent } from './components/book/book-card/book-card.component';
+import { BookListComponent } from './components/book/book-list/book-list.component';
+import { MatCardModule } from '@angular/material/card';
 import { SignupComponent } from './components/signup/signup.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
@@ -39,16 +40,16 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
   declarations: [
     AppComponent,
     HomeComponent,
-    // BookListComponent,
-    // BookCardComponent,
+    BookListComponent,
+    BookCardComponent,
     NavbarComponent,
     LoginComponent,
     BooktestComponent,
     LoginPageComponent,
     OurBooksComponent,
     UpdateAuthorComponent,
-    BookIstComponent,
     BookCardComponent,
+    BookListComponent,
     SignupComponent,
     VerifyEmailComponent,
   ],
@@ -75,7 +76,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     MatInputModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
