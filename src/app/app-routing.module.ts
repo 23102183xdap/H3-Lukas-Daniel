@@ -1,5 +1,5 @@
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
 import { LoginComponent } from './views/before-login/login/login.component';
@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'sign-up',
     component: SignupComponent
+  },
+  {
+    path: 'verify-email',
+    component: VerifyEmailComponent
   }
 ];
 

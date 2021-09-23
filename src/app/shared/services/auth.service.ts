@@ -1,3 +1,4 @@
+import { SignupComponent } from './../../components/signup/signup.component';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
@@ -13,11 +14,13 @@ export class AuthService {
 
   userData: any;
   isAdmin: any;
+  userState!: User;
 
   constructor(
     private auth: AngularFireAuth,
     private router: Router,
-    private store: AngularFirestore) {
+    private store: AngularFirestore,
+    private customer: SignupComponent) {
     this.auth.authState.subscribe(user => {
       if(user) {
         this.userData = user;
@@ -61,6 +64,7 @@ export class AuthService {
       const result = await this.auth.createUserWithEmailAndPassword(email, password);
       this.SendVerifyMail();
       this.SetUserData(result.user);
+      this.customer.SetUID(this.userState.uid);
     } catch (error: any) {
       console.log(error.message);
     }
@@ -147,13 +151,13 @@ export class AuthService {
    */
   SetUserData(user: any) {
     const userRef: AngularFirestoreDocument<any> = this.store.doc(`users/${user.uid}`);
-    const userState: User = {
+    this.userState = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       emailVerified: user.emailVerified,
     };
-    return userRef.set(userState, {
+    return userRef.set(this.userState, {
       merge: true
     });
   }
