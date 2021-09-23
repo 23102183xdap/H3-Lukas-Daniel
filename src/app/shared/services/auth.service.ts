@@ -1,5 +1,5 @@
 import { SignupComponent } from './../../components/signup/signup.component';
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import firebase from 'firebase/compat/app';
@@ -19,8 +19,7 @@ export class AuthService {
   constructor(
     private auth: AngularFireAuth,
     private router: Router,
-    private store: AngularFirestore,
-    private customer: SignupComponent) {
+    private store: AngularFirestore) {
     this.auth.authState.subscribe(user => {
       if(user) {
         this.userData = user;
@@ -64,7 +63,6 @@ export class AuthService {
       const result = await this.auth.createUserWithEmailAndPassword(email, password);
       this.SendVerifyMail();
       this.SetUserData(result.user);
-      this.customer.SetUID(this.userState.uid);
     } catch (error: any) {
       console.log(error.message);
     }

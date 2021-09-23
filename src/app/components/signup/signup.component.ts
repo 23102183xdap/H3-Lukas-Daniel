@@ -1,7 +1,7 @@
 import { CustomerService } from './../../shared/services/customer.service';
 import { AuthService } from './../../shared/services/auth.service';
 import { FormGroup, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 
 export class ErrorState implements ErrorStateMatcher {
@@ -11,16 +11,18 @@ export class ErrorState implements ErrorStateMatcher {
   }
 }
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
+  providers: []
 })
 export class SignupComponent implements OnInit {
 
 
+  userData = JSON.parse(localStorage.getItem('user') || '{}')
 
-  userID!: string
   email = new FormControl('', [
     Validators.required,
     Validators.email
@@ -29,29 +31,33 @@ export class SignupComponent implements OnInit {
     Validators.minLength(8),
     Validators.maxLength(24),
   ]);
-  firstname = new FormControl();
-  lastname = new FormControl();
-  birthdate = new FormControl();
+  datepicker = new FormControl('', [
+    Validators.required
+  ]);
+  firstname = new FormControl('', [
+    Validators.required
+  ]);
+  lastname = new FormControl('', [
+    Validators.required,
+  ]);
   matcher = new ErrorState();
 
   signupForm = new FormGroup({
     email: this.email,
-    password: this.password
+    password: this.password,
+    datepicker: this.datepicker,
+    firstname: this.firstname,
+    lastname: this.lastname,
   })
 
   constructor(public auth: AuthService, private customer: CustomerService) { }
-
   ngOnInit(): void {
-  }
-
-  async SetUID(id?: string) {
-    id = this.userID;
   }
 
   async CreateCustomer(firstname: string, lastname: string, birthdate: string) {
     let nBirthdate = new Date(birthdate)
     const data = {
-      id: this.userID,
+      id: this.userData.uid,
       firstname: firstname,
       lastname: lastname,
       birthdate: nBirthdate

@@ -1,3 +1,6 @@
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { BookService } from './shared/services/book.service';
+import { AuthService } from './shared/services/auth.service';
 import { MatButtonModule } from '@angular/material/button';
 import { AuthorModule } from './components/author/author.module';
 import { MatListModule } from '@angular/material/list';
@@ -18,7 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginComponent } from './views/before-login/login/login.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
-import { MatOptionModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
@@ -71,6 +74,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent],
