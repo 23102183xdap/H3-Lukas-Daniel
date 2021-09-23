@@ -1,3 +1,4 @@
+import { SignupComponent } from './components/signup/signup.component';
 import { UpdateAuthorComponent } from './test-components/update-author/update-author.component';
 import { AuthorListComponent } from './components/author/author-list/author-list.component';
 import { BooktestComponent } from './test-components/booktest/booktest.component';
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'our-books',
     component: OurBooksComponent,
+  },
+  {
+    path: 'sign-up',
+    component: SignupComponent,
   },
 ];
 

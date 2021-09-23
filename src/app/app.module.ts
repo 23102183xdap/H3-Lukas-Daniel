@@ -30,6 +30,8 @@ import { UpdateAuthorComponent } from './test-components/update-author/update-au
 import { BookCardComponent } from './components/book/book-card/book-card.component';
 import { BookListComponent } from './components/book/book-list/book-list.component';
 import { MatCardModule } from '@angular/material/card';
+import { SignupComponent } from './components/signup/signup.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { MatCardModule } from '@angular/material/card';
     UpdateAuthorComponent,
     BookCardComponent,
     BookListComponent,
+    SignupComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,23 @@
-<div class="container con1">
-  <h1 *ngIf="this.booksLen === 1">Lyt til {{ this.booksLen }} bog</h1>
-  <h1 *ngIf="this.booksLen > 1">Lyt til {{ this.booksLen }} bøger</h1>
-  <h2>Tilmeld dig i dag!</h2>
-</div>
-
-<div class="container con2">
-  <div *ngFor="let i of img">
-    <img *ngIf="this.currentImg == i.index" src="{{ i.url }}" />
-  </div>
-  <div class="buttons">
-    <div *ngFor="let b of img">
-      <p
-        *ngIf="b.url"
-        class="button"
-        [class.active]="b.index == this.currentImg"
-        (click)="chooseImg(b.index)"
-      ></p>
+<div class="container con">
+  <div class="row">
+    <div class="col wrap-1">
+      <h1 *ngIf="this.booksLen === 1">Lyt til {{ this.booksLen }} bog</h1>
+      <h1 *ngIf="this.booksLen > 1">Lyt til {{ this.booksLen }} bøger</h1>
+      <h2>Tilmeld dig i dag!</h2>
+      <div class="auth">
+        <button mat-raised-button color="primary" type="button">Login</button>
+        <button mat-raised-button>Signup</button>
+      </div>
+    </div>
+    <div class="col wrap-2">
+      <div *ngFor="let i of img">
+        <img *ngIf="this.currentImg == i.index" src="{{ i.url }}" />
+      </div>
+      <div class="buttons">
+        <div *ngFor="let b of img">
+          <p *ngIf="b.url" class="button" [class.active]="b.index == this.currentImg" (click)="chooseImg(b.index)"></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
