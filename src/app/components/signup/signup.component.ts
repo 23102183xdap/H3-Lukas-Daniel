@@ -1,5 +1,6 @@
+import { CustomerService } from './../../shared/services/customer.service';
 import { AuthService } from './../../shared/services/auth.service';
-import { FormGroup, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
+import { FormGroup, FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 
@@ -18,8 +19,19 @@ export class ErrorState implements ErrorStateMatcher {
 export class SignupComponent implements OnInit {
 
 
-  email = new FormControl();
-  password = new FormControl();
+
+  userID!: string
+  email = new FormControl('', [
+    Validators.required,
+    Validators.email
+  ]);
+  password = new FormControl('', [
+    Validators.minLength(8),
+    Validators.maxLength(24),
+  ]);
+  firstname = new FormControl();
+  lastname = new FormControl();
+  birthdate = new FormControl();
   matcher = new ErrorState();
 
   signupForm = new FormGroup({
@@ -27,9 +39,27 @@ export class SignupComponent implements OnInit {
     password: this.password
   })
 
-  constructor(public auth: AuthService) { }
+  constructor(public auth: AuthService, private customer: CustomerService) { }
 
   ngOnInit(): void {
   }
 
+  async SetUID(id?: string) {
+    id = this.userID;
+  }
+
+  async CreateCustomer(firstname: string, lastname: string, birthdate: string) {
+    let nBirthdate = new Date(birthdate)
+    const data = {
+      id: this.userID,
+      firstname: firstname,
+      lastname: lastname,
+      birthdate: nBirthdate
+    }
+    this.customer.CreateCustomer(data).subscribe((res) => {
+      console.log(res);
+    }, (error) => {
+      console.log(error.message);
+    })
+  }
 }

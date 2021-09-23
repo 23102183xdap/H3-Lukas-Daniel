@@ -74,7 +74,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     MatButtonModule,
     MatCardModule,
   ],
-  providers: [CustomerService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

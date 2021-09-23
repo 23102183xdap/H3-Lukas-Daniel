@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="signup-form" [formGroup]="signupForm" (ngSubmit)="this.auth.SignUp(mail.value, pwd.value)">
+  <form class="signup-form" [formGroup]="signupForm" (ngSubmit)="this.auth.SignUp(mail.value, pwd.value); ">
     <p>Sign Up</p>
     <mat-form-field appearance="fill">
       <mat-label>Email</mat-label>
@@ -16,15 +16,20 @@
       <mat-label>Password</mat-label>
       <input type="password" matInput #pwd [formControl]="password" [errorStateMatcher]="matcher"
         placeholder="Password">
-        <mat-error *ngIf="password.hasError('password') && !password.hasError('required')">
-          Please enter a valid password
-        </mat-error>
-        <mat-error *ngIf="password.hasError('minlength')">
-          Password must be at least 8 characters
-        </mat-error>
-        <mat-error *ngIf="password.hasError('maxlength')">
-          Password must not exceed 24 characters
-        </mat-error>
+      <mat-error *ngIf="password.hasError('password') && !password.hasError('required')">
+        Please enter a valid password
+      </mat-error>
+      <mat-error *ngIf="password.hasError('minlength')">
+        Password must be at least 8 characters
+      </mat-error>
+      <mat-error *ngIf="password.hasError('maxlength')">
+        Password must not exceed 24 characters
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Firstname</mat-label>
+      <input type="text" matInput #firstName [formControl]="firstname" [errorStateMatcher]="matcher"
+        placeholder="Ex. John Doe">
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Sign Up</button>
   </form>
