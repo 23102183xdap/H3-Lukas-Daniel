@@ -7,9 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AuthorCardComponent implements OnInit {
 
-  @Input() author_firstName : any;
-  @Input() author_lastName : any;
-  @Input() author_id : any;
+  @Input() author_firstName: any;
+  @Input() author_lastName: any;
+  @Input() author_id: any;
 
   authorImgUrl?: string;
 
@@ -19,7 +19,7 @@ export class AuthorCardComponent implements OnInit {
     "id": "",
   }
 
-  constructor() { 
+  constructor() {
 
 
   }
@@ -30,6 +30,6 @@ export class AuthorCardComponent implements OnInit {
     this.Author.id = this.author_id;
     console.log("author firstname : " + this.author_firstName)
     this.authorImgUrl = `https://loremflickr.com/400/300/${this.author_firstName}`; // this url is a test url
-    console.log("author card")
+    // console.log("author card")
   }
 }

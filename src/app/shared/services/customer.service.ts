@@ -46,8 +46,8 @@ export class CustomerService {
     return this.http.put<Customer>(`${this.baseURL}/update/${id}`, data);
   }
 
-  public SetDisplayName(displayName: string) {
-    this.store.doc(`users/${this.userData.uid}`)
-    .set({displayName: displayName}, {merge: true})
-  }
+  // public SetDisplayName(displayName: string) {
+  //   this.store.doc(`users/${this.userData.uid}`)
+  //   .set({displayName: displayName}, {merge: true})
+  // }
 }

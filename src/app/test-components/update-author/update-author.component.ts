@@ -46,6 +46,13 @@ export class UpdateAuthorComponent implements OnInit {
     })
   }
 
+  /**
+   * Update author
+   *
+   * @param {string} firstname
+   * @param {string} lastname
+   * @memberof UpdateAuthorComponent
+   */
   updateAuthor(firstname: string, lastname: string, ) {
     const data = {
       firstname: firstname,

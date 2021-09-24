@@ -2,7 +2,6 @@ import { AuthorService } from '../../shared/services/author.service';
 import { BookService } from '../../shared/services/book.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({

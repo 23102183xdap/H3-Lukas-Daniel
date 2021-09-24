@@ -13,7 +13,7 @@
     <mat-card-content>
       <p>{{ this.book.pages }} pages</p>
       <p *ngIf="this.book.series">Number {{ this.book.series }} in series</p>
-      <p *ngIf="!this.book.series">Standalone Book, Not in a series</p>
+      <p *ngIf="!this.book.series">Standalone book, not in a series</p>
       <p>Viewed {{ this.book.popularity }} times</p>
       <p>Published at {{ this.book.publishDate }}</p>
     </mat-card-content>

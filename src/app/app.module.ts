@@ -82,4 +82,4 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

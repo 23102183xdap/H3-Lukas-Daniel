@@ -43,7 +43,7 @@ export class AuthService {
     try {
       const result = await this.auth.signInWithEmailAndPassword(email, password);
       await this.SetUserData(result.user);
-      this.router.navigate(['user-panel']);
+      this.router.navigate(['home']);
     }
     catch (error: any) {
       console.log(error.message);
@@ -86,7 +86,9 @@ export class AuthService {
 
 
   /**
-   * Will be used in Auth Guard.
+   * Checks if you are logged in or not.
+   * Then it will return true or false depending on
+   * if you are logged in
    *
    * @readonly
    * @type {boolean}

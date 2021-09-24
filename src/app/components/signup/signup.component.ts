@@ -64,9 +64,9 @@ export class SignupComponent implements OnInit {
       birthdate: nBirthdate,
     }
 
-    let dName = data.firstname + " " + data.lastname
+    // let dName = data.firstname + " " + data.lastname // XXX Needs removal
 
-    this.customer.SetDisplayName(dName);
+    // this.customer.SetDisplayName(dName); // BUG Possibly remove
     this.customer.CreateCustomer(data).subscribe((res) => {
       console.log(res);
     }, (error) => {
